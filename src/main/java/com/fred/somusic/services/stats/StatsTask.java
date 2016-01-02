@@ -44,16 +44,16 @@ public class StatsTask extends BaseTask {
       // increment the count
       if (stats.isEmpty()) {
         entry.increment();
-        //statsDb.create(entry);
+        statsDb.create(entry);
         Log.info("stats", "New entry");
       } else {
         entry = stats.get(0);
         entry.increment();
-        //statsDb.update(entry);
+        statsDb.update(entry);
         Log.info("stats", "Incremented");
       }
       song.setState(Status.STATS_UPDATED);
-      //songDb.update(song);
+      songDb.update(song);
     }
   }
 }
