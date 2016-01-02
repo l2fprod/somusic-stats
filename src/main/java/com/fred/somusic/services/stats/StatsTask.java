@@ -17,7 +17,7 @@ import com.fred.somusic.common.utils.Log;
 @Component
 public class StatsTask extends BaseTask {
 
-  @Scheduled(fixedDelay = 5000)
+  @Scheduled(fixedDelay = 5 * 60 * 1000)
   public void stats() {
     // find all items not processed
     CouchDbConnector songDb = getSongDb();
