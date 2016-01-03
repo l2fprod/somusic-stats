@@ -1,5 +1,6 @@
 package com.fred.somusic.services.stats;
 
+import java.nio.charset.Charset;
 import java.util.Calendar;
 import java.util.List;
 import java.util.TimeZone;
@@ -8,14 +9,21 @@ import org.ektorp.CouchDbConnector;
 import org.ektorp.ViewQuery;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StreamUtils;
 
 import com.fred.somusic.common.BaseTask;
 import com.fred.somusic.common.model.Song;
 import com.fred.somusic.common.model.Song.Status;
+import com.fred.somusic.common.utils.CouchDBUtils;
 import com.fred.somusic.common.utils.Log;
 
 @Component
 public class StatsTask extends BaseTask {
+
+  public StatsTask() throws Exception {
+    CouchDBUtils.createDesignView(getStatsDb(), "stats", "by_source_id", StreamUtils.copyToString(
+        StatsTask.class.getResourceAsStream("/database/stats/by_source_id.js"), Charset.forName("UTF-8")));
+  }
 
   @Scheduled(fixedDelay = 5 * 60 * 1000)
   public void stats() {
