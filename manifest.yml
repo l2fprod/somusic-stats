@@ -3,4 +3,4 @@ applications:
   path: target/somusic-stats-0.0.1-SNAPSHOT.jar
   memory: 256M
   services:
-  - cloudant
+  - somusic-cloudant
