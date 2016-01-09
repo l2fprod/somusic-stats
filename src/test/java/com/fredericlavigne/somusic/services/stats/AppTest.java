@@ -1,4 +1,4 @@
-package com.fred.somusic.services.stats;
+package com.fredericlavigne.somusic.services.stats;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

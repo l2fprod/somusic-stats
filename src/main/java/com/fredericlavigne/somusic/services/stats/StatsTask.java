@@ -1,4 +1,4 @@
-package com.fred.somusic.services.stats;
+package com.fredericlavigne.somusic.services.stats;
 
 import java.nio.charset.Charset;
 import java.util.Calendar;
@@ -11,11 +11,11 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StreamUtils;
 
-import com.fred.somusic.common.BaseTask;
-import com.fred.somusic.common.model.Song;
-import com.fred.somusic.common.model.Song.Status;
-import com.fred.somusic.common.utils.CouchDBUtils;
-import com.fred.somusic.common.utils.Log;
+import com.fredericlavigne.somusic.common.BaseTask;
+import com.fredericlavigne.somusic.common.model.Song;
+import com.fredericlavigne.somusic.common.model.Song.Status;
+import com.fredericlavigne.somusic.common.utils.CouchDBUtils;
+import com.fredericlavigne.somusic.common.utils.Log;
 
 @Component
 public class StatsTask extends BaseTask {

@@ -1,4 +1,4 @@
-package com.fred.somusic.services.stats;
+package com.fredericlavigne.somusic.services.stats;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -6,7 +6,7 @@ import java.util.TimeZone;
 
 import org.ektorp.ComplexKey;
 
-import com.fred.somusic.common.model.Song;
+import com.fredericlavigne.somusic.common.model.Song;
 import com.google.gson.annotations.Expose;
 
 @SuppressWarnings("serial")
