@@ -1,3 +1,7 @@
+declared-services:
+  somusic-cloudant:
+    label: cloudantNoSQLDB
+    plan: Shared
 applications:
 - name: somusic-stats
   path: target/somusic-stats-0.0.1-SNAPSHOT.jar
