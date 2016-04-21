@@ -10,6 +10,7 @@ import org.ektorp.ViewQuery;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StreamUtils;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.fredericlavigne.somusic.common.BaseTask;
 import com.fredericlavigne.somusic.common.model.Song;
@@ -25,6 +26,11 @@ public class StatsTask extends BaseTask {
         StatsTask.class.getResourceAsStream("/database/stats/by_source_id.js"), Charset.forName("UTF-8")));
   }
 
+  @RequestMapping("/tasks/stats")
+  public void triggerStats() {
+    stats();
+  }
+  
   @Scheduled(fixedDelay = 5 * 60 * 1000)
   public void stats() {
     // find all items not processed
